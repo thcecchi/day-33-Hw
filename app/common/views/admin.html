@@ -1,0 +1,14 @@
+<article class="products" ng-repeat="products in main.allProducts">
+  <h3>{{products.name}}</h3>
+  <img src="{{products.photo}}" alt="{{products.name}}">
+  <h5>{{products.price}}</h5>
+</article>
+
+<button name="addProduct" ng-click="clicked = !clicked">Add Product</button>
+  <form id="addProductForm" ng-show="clicked" ng-submit="main.addProduct(newproduct)">
+    <input type="text" ng-model="newproduct.name" placeholder="add name">
+    <input type="text" ng-model="newproduct.photo" placeholder="add photo">
+    <input type="text" ng-model="newproduct.price" placeholder="add price">
+
+    <button type="submit">Add A New Product</button>
+  </form>

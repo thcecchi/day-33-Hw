@@ -1,0 +1,25 @@
+
+// Custom Styles
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+.products {
+  display: inline-block;
+  /* width: 25%; */
+  vertical-align: top;
+}
+
+#addProductForm {
+
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: inline-block;
+}
