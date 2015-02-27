@@ -33,9 +33,21 @@ var addProduct = function (product) {
   products.push(product);
 }
 
+var updateProduct = function (product) {
+    var selectedProduct = product;
+    console.log(selectedProduct);
+}
+
+var removeProduct = function (product) {
+  var index = products.indexOf(item)
+  products.splice(index, 1); 
+}
+
 return {
   getAllProducts: getProducts,
-  addOneProduct: addProduct
+  addOneProduct: addProduct,
+  updateOneProduct: updateProduct,
+  removeOneProduct: removeProduct
 };
 });
 

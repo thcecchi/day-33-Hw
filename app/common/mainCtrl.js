@@ -11,6 +11,16 @@
         $scope.newproduct = {};
       };
 
+      main.updateProduct = function (product) {
+        ProductService.updateOneProduct(product);
+        $scope.newproduct = {};
+      }
+
+      main.removeProduct = function (product) {
+        ProductService.removeOneProduct(product);
+        $scope.newproduct = {};
+      }
+
       main.notFound = "We're sorry, but the page you requested is not found."
   });
 })();
