@@ -39,9 +39,10 @@ var updateProduct = function (product) {
 }
 
 var removeProduct = function (product) {
-  var index = products.indexOf(item)
-  products.splice(index, 1); 
+  var index = products.indexOf(product)
+  products.splice(index, 1);
 }
+
 
 return {
   getAllProducts: getProducts,
@@ -49,6 +50,7 @@ return {
   updateOneProduct: updateProduct,
   removeOneProduct: removeProduct
 };
+
 });
 
 })();

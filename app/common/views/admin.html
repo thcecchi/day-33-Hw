@@ -1,20 +1,35 @@
 <article class="products" ng-repeat="products in main.allProducts">
+<div class="flip-container">
+  <script charset="utf-8">
+    $('.flip-container').on('click', '.edit', function () {
+      this.find('flipper').toggleClass('hover');
+    })
+  </script>
+  <div class="flipper">
+    <div class="front">
+      <img ng-src="{{products.photo}}" alt="{{products.name}}">
+      <div class='info'>
+        <h3>{{products.name}}</h3>
+        <h5>{{products.price}}</h5>
+      </div>
+    </div>
+    <div class="back">
+      <h3>Edit {{products.name}}</h3>
+      <input type="text" ng-model="products.name"/>  <input type="text" ng-model="products.photo"/>  <input type="text" ng-model="products.price"/>
+    </div>
+  </div>
+</div>
   <!-- start isEdited -->
   <div ng-show="products.isEdited">
-    <input type="text" ng-model="products.name"/> - <input type="text" ng-model="products.photo"/> - <input type="text" ng-model="products.price"/>
+    <!-- <input type="text" ng-model="products.name"/>  <input type="text" ng-model="products.photo"/>  <input type="text" ng-model="products.price"/> -->
     <button ng-click="products.isEdited = false">Ok</button>
   </div>
   <div ng-hide="products.isEdited">
-    {{products.name}} - {{products.photo}} - {{products.price}}
-    <button ng-click="products.isEdited = true">Edit</button>
+    <button class="edit" ng-click="products.isEdited = true">Edit</button>
   <!-- end isEdited -->
   <!-- start remove -->
-  <button class="btn" ng-click="removeProduct(item)">Delete</button>
+  <button type="button" ng-click="main.removeProduct(products)">Remove</button>
   <!-- end remove -->
-
-  <h3>{{products.name}}</h3>
-  <img ng-src="{{products.photo}}" alt="{{products.name}}">
-  <h5>{{products.price}}</h5>
 </article>
 
 <button name="addProduct" ng-click="clicked = !clicked">Add Product</button>
