@@ -22,12 +22,12 @@
       }
 
       main.flipCard = function() {
-        var myEl = angular.element( ( '.flipper' ) );
+        var myEl = angular.element( $(event.target).parent().siblings().find( '.flipper' ) );
         myEl.addClass('doFlip');
       }
 
       main.unflipCard = function() {
-        var myEl = angular.element( ( '.flipper' ) );
+        var myEl = angular.element( $(event.target).parent().siblings().find( '.flipper' ) );
         myEl.removeClass('doFlip');
       }
 
