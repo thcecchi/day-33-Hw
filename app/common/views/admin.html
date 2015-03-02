@@ -1,11 +1,7 @@
 <article class="products" ng-repeat="products in main.allProducts">
-<div class="flip-container">
-  <script charset="utf-8">
-    $('.flip-container').on('click', '.edit', function () {
-      this.find('flipper').toggleClass('hover');
-    })
-  </script>
-  <div class="flipper">
+<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+
+  <div class="flipper" ng-class="{doflip: flip}">
     <div class="front">
       <img ng-src="{{products.photo}}" alt="{{products.name}}">
       <div class='info'>
@@ -22,10 +18,12 @@
   <!-- start isEdited -->
   <div ng-show="products.isEdited">
     <!-- <input type="text" ng-model="products.name"/>  <input type="text" ng-model="products.photo"/>  <input type="text" ng-model="products.price"/> -->
-    <button ng-click="products.isEdited = false">Ok</button>
+    <button ng-click="products.isEdited = false"; "main.flipCard()">Ok</button>
   </div>
   <div ng-hide="products.isEdited">
-    <button class="edit" ng-click="products.isEdited = true">Edit</button>
+    <button class="edit" ng-click="products.isEdited = true", "main.flipCard()">Edit</button>
+    <button class="edit" ng-click="main.flipCard()">Flip</button>
+    <button class="edit" ng-click="main.unflipCard()">unFlip</button>
   <!-- end isEdited -->
   <!-- start remove -->
   <button type="button" ng-click="main.removeProduct(products)">Remove</button>

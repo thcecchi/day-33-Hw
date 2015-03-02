@@ -32,8 +32,8 @@ header {
       font-weight: bold;
       padding: 2% 2% 9% 2%;
       width: 30%;
-      border-top-left-radius: 1.25em;
-      border-top-right-radius: 1.25em;
+      border-top-left-radius: .5em;
+      border-top-right-radius: .5em;
 
       &:hover {
         background: white;
@@ -102,8 +102,14 @@ ng-view {
 .flip-container {
   -webkit-perspective: 1000;
 }
+
 /* flip the pane when hovered */
-.flip-container .flipper, .flip-container.hover .flipper {
+// .flip-container:hover .flipper, .flip-container.hover .flipper {
+//   transform: rotateY(180deg);
+// }
+
+/* flip the pane when hovered */
+.doFlip {
   transform: rotateY(180deg);
 }
 
@@ -112,6 +118,7 @@ ng-view {
   height: 200px;
   // border: 5px solid gray;
   background: lightgray;
+  border-radius: .5em;
 }
 
 /* flip speed goes here */

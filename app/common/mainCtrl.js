@@ -21,6 +21,17 @@
         $scope.newproduct = {};
       }
 
+      main.flipCard = function() {
+        var myEl = angular.element( ( '.flipper' ) );
+        myEl.addClass('doFlip');
+      }
+
+      main.unflipCard = function() {
+        var myEl = angular.element( ( '.flipper' ) );
+        myEl.removeClass('doFlip');
+      }
+
+
       main.notFound = "We're sorry, but the page you requested is not found."
   });
 })();
