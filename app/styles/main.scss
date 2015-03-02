@@ -31,7 +31,7 @@ header {
       text-align: center;
       font-weight: bold;
       padding: 2% 2% 9% 2%;
-      width: 30%;
+      width: 25%;
       border-top-left-radius: .5em;
       border-top-right-radius: .5em;
 
@@ -72,7 +72,7 @@ ng-view {
 .products {
   display: inline-block;
   width: 25%;
-  margin-top: 5%;
+  margin-top: 3%;
   // text-align: center;
 
   img {
@@ -86,8 +86,26 @@ ng-view {
 
 }
 
-#addProductForm {
+.productsCart {
 
+  h5 {
+    display: inline-block;
+  }
+}
+
+#addProduct {
+  background: green;
+  width: 20%;
+  border-radius: 0 0 20px 20px;
+}
+
+#addProductForm {
+  width: 100%;
+  margin-left: 7%;
+
+  input {
+    margin-bottom: 5%;
+  }
 }
 
 .fa {
@@ -103,6 +121,16 @@ ng-view {
     color: green;
   }
 
+  &.fa-plus-square-o {
+    text-align: center;
+    width: 100%;
+    padding: 5% 0 5% 0;
+    margin: 0;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+  }
+
   &.fa-trash-o:hover {
     color: red;
   }
@@ -110,6 +138,54 @@ ng-view {
   &.fa-pencil:hover {
     color: orange;
   }
+
+  &.fa-shopping-cart {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  &.fa-cart-plus {
+    color: #ef4f59;
+    font-size: 1.5em;
+
+    &:hover {
+      color: firebrick;
+    }
+  }
+
+  &.fa-minus-square-o {
+    color: #ef4f59;
+    padding: 0;
+    width: 5%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+}
+
+.cartContainer {
+  width: 75%;
+  min-height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  background: lightgray;
+  border-radius: 5%;
+
+  .productsCart {
+    margin-left: 10%;
+    padding-top: 5%;
+  }
+
+}
+
+p {
+  display: inline-block;
+  padding: 0;
+  margin: 0 0  0 5%;
+  width: auto;
+  font-size: .75em;
+
 }
 
 

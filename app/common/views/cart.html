@@ -1,0 +1,11 @@
+<h1>You have {{cart.allCartProducts.length}} products in your cart!</h1>
+<div class="cartContainer">
+  <article class="productsCart" ng-repeat="productsCart in cart.allCartProducts">
+    <img ng-src="{{productsCart.photo}}" alt="{{productsCart.name}}">
+    <div class='info'>
+      <h3>{{productsCart.name}}</h3>
+      <h5>{{productsCart.price}}</h5>
+      <i ng-click="cart.removeCartProduct(productsCart)" class="fa fa-minus-square-o"></i>
+    </div>
+  </article>
+</div>

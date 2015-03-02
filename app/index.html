@@ -25,6 +25,10 @@
       <ul>
         <li><a href="#/">Home</a></li>
         <li><a href="#/admin">Admin Login</a></li>
+        <li ng-controller="CartCtrl as cart" class="cartTotal"><a href="#/cart"><i class="fa fa-shopping-cart"><p>
+          {{cart.allCartProducts.length}}
+        </p></i></a></li>
+
       </ul>
     </header>
 
@@ -46,6 +50,8 @@
         <script src="app.js"></script>
         <script src="common/mainCtrl.js"></script>
         <script src="common/mainCtrlService.js"></script>
+        <script src="common/cartCtrl.js"></script>
+        <script src="common/cartService.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -10,6 +10,10 @@
           templateUrl: "common/views/admin.html",
           controller: "MainCtrl as main"
         })
+        .when('/cart', {
+          templateUrl: "common/views/cart.html",
+          controller: "CartCtrl as cart"
+        })
         .when('/not-found', {
           templateUrl: "common/views/not-found.html"
         })

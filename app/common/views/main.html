@@ -1,7 +1,10 @@
 <article class="products" ng-repeat="products in main.allProducts">
-    <img ng-src="{{products.photo}}" alt="{{products.name}}">
-    <div class='info'>
-      <h3>{{products.name}}</h3>
-      <h5>{{products.price}}</h5>
+  <img ng-src="{{products.photo}}" alt="{{products.name}}">
+  <div class='info'>
+    <h3>{{products.name}}</h3>
+    <h5>{{products.price}}</h5>
+    <div class="cartControl" ng-controller="CartCtrl as cart">
+      <a ng-click="cart.addCartProduct(products)"><i class="fa fa-cart-plus"></i></a>
     </div>
-  </article>
+  </div>
+</article>

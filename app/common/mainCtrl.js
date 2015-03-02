@@ -31,7 +31,6 @@
         myEl.removeClass('doFlip');
       }
 
-
       main.notFound = "We're sorry, but the page you requested is not found."
   });
 })();
