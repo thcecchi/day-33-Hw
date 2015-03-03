@@ -1,9 +1,24 @@
-<h1>You have {{cart.allCartProducts.length}} products in your cart!</h1>
+<h2>You have {{cart.allCartProducts.length}} products in your cart!</h2>
+<h2>Total is {{cart.totalCart}}!</h2>
 <div class="cartContainer">
   <article class="productsCart" ng-repeat="productsCart in cart.allCartProducts">
     <img ng-src="{{productsCart.photo}}" alt="{{productsCart.name}}">
     <div class='info'>
       <h3>{{productsCart.name}}</h3>
+      <h3>Qty:</h3>
+      <select name="productQty" ng-model="productsCart.qty">
+        <option value="1">one</option>
+        <option value="2">two</option>
+        <option value="3">three</option>
+        <option value="4">four</option>
+        <option value="5">five</option>
+        <option value="6">six</option>
+        <option value="7">seven</option>
+        <option value="8">eight</option>
+        <option value="9">nine</option>
+        <option value="10">ten</option>
+      </select>
+      <input type="button" value="update qty">
       <h5>{{productsCart.price}}</h5>
       <i ng-click="cart.removeCartProduct(productsCart)" class="fa fa-minus-square-o"></i>
     </div>

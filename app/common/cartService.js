@@ -24,11 +24,21 @@ var removeCartProduct = function (product) {
 //   console.log(selectedProduct);
 // }
 
+var cartTotal = function() {
+  var total = 0;
+  angular.forEach(productsCart, function(item) {
+    total += item.qty * item.price;
+  })
+
+  return parseInt(total);
+}
+
 
 return {
   getAllCart: getCartProducts,
   addOneCart: addCartProduct,
-  removeOneCart: removeCartProduct
+  removeOneCart: removeCartProduct,
+  totalAllCart: cartTotal
 };
 
 });

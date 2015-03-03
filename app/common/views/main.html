@@ -1,5 +1,5 @@
 <article class="products" ng-repeat="products in main.allProducts">
-  <img ng-src="{{products.photo}}" alt="{{products.name}}">
+  <a href="#/detail/{{products._id}}"><img ng-src="{{products.photo}}" alt="{{products.name}}"></a>
   <div class='info'>
     <h3>{{products.name}}</h3>
     <h5>{{products.price}}</h5>

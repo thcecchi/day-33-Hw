@@ -10,6 +10,10 @@
           templateUrl: "common/views/admin.html",
           controller: "MainCtrl as main"
         })
+        .when('/detail/:productId', {
+          templateUrl: 'common/views/detail.html',
+          controller: 'MainCtrl as main'
+        })
         .when('/cart', {
           templateUrl: "common/views/cart.html",
           controller: "CartCtrl as cart"

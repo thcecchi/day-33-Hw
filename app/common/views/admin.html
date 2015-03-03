@@ -6,7 +6,7 @@
     <input type="text" ng-model="newproduct.photo" placeholder="add photo">
     <input type="text" ng-model="newproduct.price" placeholder="add price">
 
-    <button type="submit">Add!</button>
+    <button class="newProductSubmit" type="submit"><i class="fa fa-check-square-o"></i></button>
   </form>
 </div>
 <!-- END add product -->
@@ -28,12 +28,12 @@
 </div>
   <!-- start isEdited -->
   <div ng-show="products.isEdited">
-    <i ng-click="products.isEdited = false; main.unflipCard()" class="fa fa-check"></i>
+    <i ng-click="products.isEdited = false; main.unflipCard(); main.updateProduct(products, products._id)" class="fa fa-check"></i>
   </div>
   <div ng-hide="products.isEdited">
     <i ng-click="products.isEdited = true; main.flipCard()" class="fa fa-pencil edit"></i>
   <!-- end isEdited -->
   <!-- start remove -->
-  <i ng-click="main.removeProduct(products)" class="fa fa-trash-o"></i>
+  <i ng-click="main.removeProduct(products._id)" class="fa fa-trash-o"></i>
   <!-- end remove -->
 </article>
