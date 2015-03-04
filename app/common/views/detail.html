@@ -1,3 +1,19 @@
 <h1>{{main.getSingleProd.name}}</h1>
 <img ng-src="{{main.getSingleProd.photo}}" alt="{{main.getSingleProd.name}}">
 <h5>{{main.getSingleProd.price}}</h5>
+
+<div class="detailControl" ng-controller="DetailCtrl as detail">
+<h3>Comments</h3>
+<div id="addComment">
+  <button name="addComment" ng-click="clicked = !clicked" class="comment">Add Comment!</button>
+  <form id="addCommentForm" ng-show="clicked" ng-submit="detail.addComment(newcomment)">
+    <input type="textarea" ng-model="newcomment.content" placeholder="add comment">
+    <button class="newCommentSubmit comment" type="submit">Submit!</button>
+  </form>
+</div>
+<hr>
+
+  <article class="comments" ng-repeat="comments in detail.allComments">
+    <h3>{{comments.content}}</h3>
+  </article>
+</div>

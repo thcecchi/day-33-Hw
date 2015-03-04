@@ -5,6 +5,8 @@
     <input type="text" ng-model="newproduct.name" placeholder="add name">
     <input type="text" ng-model="newproduct.photo" placeholder="add photo">
     <input type="text" ng-model="newproduct.price" placeholder="add price">
+    <input type="text" ng-model="newproduct.qty" placeholder="add qty" id="productQty">
+
 
     <button class="newProductSubmit" type="submit"><i class="fa fa-check-square-o"></i></button>
   </form>
@@ -22,7 +24,7 @@
     </div>
     <div class="back">
       <h3>Edit {{products.name}}</h3>
-      <input type="text" ng-model="products.name"/>  <input type="text" ng-model="products.photo"/>  <input type="text" ng-model="products.price"/>
+      <input type="text" ng-model="products.name"/>  <input type="text" ng-model="products.photo"/>  <input type="text" ng-model="products.price"/> <input type="text" ng-model="products.qty"/>
     </div>
   </div>
 </div>

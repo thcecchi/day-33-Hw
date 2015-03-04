@@ -4,23 +4,26 @@
   .controller("CartCtrl", function (ProductCartService, $scope) {
     var cart = this;
 
-    cart.allCartProducts = ProductCartService.getAllCart();
-
-    // cart.total = cart.totalCart();
+    ProductCartService.getAllCart().success(function(data) {
+      cart.allCartProducts = data;
+      console.log(data)
+    })
 
     cart.addCartProduct = function (product) {
       ProductCartService.addOneCart(product);
-      $scope.newproduct = {};
     };
 
-    cart.removeCartProduct = function (product) {
-      ProductCartService.removeOneCart(product);
-      $scope.newproduct = {};
+    cart.removeCartProduct = function (id) {
+      ProductCartService.removeOneCart(id);
     }
 
-    cart.totalCart = function () {
-      ProductCartService.totalAllCart();
+    cart.updateCartProduct = function (product, id) {
+      ProductCartService.updateOneCart(product, id);
     }
+    // 
+    // cart.totalCart = function () {
+    //   ProductCartService.totalAllCart();
+    // }
 
   });
 })();

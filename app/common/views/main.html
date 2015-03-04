@@ -3,6 +3,7 @@
   <div class='info'>
     <h3>{{products.name}}</h3>
     <h5>{{products.price}}</h5>
+    <h5>{{products.qty}}</h5>
     <div class="cartControl" ng-controller="CartCtrl as cart">
       <a ng-click="cart.addCartProduct(products)"><i class="fa fa-cart-plus"></i></a>
     </div>

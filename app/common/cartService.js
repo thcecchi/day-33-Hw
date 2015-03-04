@@ -1,44 +1,67 @@
 (function () {
   "use strict";
   angular.module('day33Hw')
-  .factory('ProductCartService', function () {
-    var productsCart = [
+  .factory('ProductCartService', function ($http, $rootScope, $log) {
+//     var productsCart = [
+//
+// ];
 
-];
+var cartUrl = 'http://tiy-fee-rest.herokuapp.com/collections/tylerngfour'
 
 var getCartProducts = function () {
-  return productsCart;
+  return $http.get(cartUrl);
 };
 
 var addCartProduct = function (product) {
-  productsCart.push(product);
+  $http.post(cartUrl, product);
+  $rootScope.$broadcast('product: created')
+  $log.info("product: created");
 }
 
-var removeCartProduct = function (product) {
-  var index = productsCart.indexOf(product)
-  productsCart.splice(index, 1);
+var removeCartProduct = function (id) {
+  $http.delete(cartUrl + '/' + id);
+  $rootScope.$broadcast('product: deleted')
+  $log.info("product: deleted");
+  console.log(cartUrl + '/' + id)
 }
 
-// var updateProduct = function (product) {
-//   var selectedProduct = product;
-//   console.log(selectedProduct);
+var updateCartProduct = function (product, id) {
+  $http.put(cartUrl + '/' + id, product);
+  $rootScope.$broadcast('product: updated')
+  $log.info("product: updated");
+}
+
+var getSingleProduct = function (id) {
+  console.log('fired!')
+  return $http.get(cartUrl + '/' + id)
+  console.log($http.get(cartUrl + '/' + id))
+}
+
+// ///////////////////////////////
+// CART TOTALS
+// ///////////////////////////////
+
+// var cartTotal = function() {
+//   var total = 0;
+//   getCartProducts().success(function(item) {
+//     console.log(item);
+//     for (var i = 0; i < item.length; i++) {
+//       total += (item[i].price * item[i].qty);
+//     };
+//     var numTotal = parseInt(total)
+//     console.log(numTotal);
+//   });
+//   return numtotal
+//  }
 // }
-
-var cartTotal = function() {
-  var total = 0;
-  angular.forEach(productsCart, function(item) {
-    total += item.qty * item.price;
-  })
-
-  return parseInt(total);
-}
 
 
 return {
   getAllCart: getCartProducts,
   addOneCart: addCartProduct,
   removeOneCart: removeCartProduct,
-  totalAllCart: cartTotal
+  updateOneCart: updateCartProduct
+  // totalAllCart: cartTotal
 };
 
 });

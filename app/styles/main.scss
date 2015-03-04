@@ -118,7 +118,6 @@ ng-view {
       color: blanchedalmond;
     }
 
-
   }
 
   button {
@@ -133,6 +132,69 @@ ng-view {
     &:hover {
       color: white;
     }
+  }
+
+  // #productQty {
+  //   display: none;
+  // }
+
+}
+
+#addComment {
+  width: 100%;
+  display: block;
+
+  .comment {
+    margin-left: 7%;
+    margin-bottom: 2%;
+    background: blanchedalmond;
+    border: 2px solid #ef4f59;
+    display: block;
+    width: 80%;
+    color: #ef4f59;
+    padding: 0;
+    border-radius: 10px;
+    height: 50px;
+  }
+
+  #addCommentForm {
+    width: 100%;
+    margin-left: 7%;
+
+    input {
+      margin-bottom: 1%;
+      background: blanchedAlmond;
+      color: black;
+      border: 2px solid black;
+      width: 80%;
+      height: 150px;
+
+      &:focus {
+        outline: 0;
+      }
+
+      &::-webkit-input-placeholder { /* WebKit browsers */
+        color: black;
+      }
+
+    }
+
+    button {
+      background: #ef4f59;
+      border: none;
+      display: block;
+      width: 80%;
+      color: blanchedalmond;
+      padding: 0;
+      margin: 0 0 2% 0;
+      border-radius: 10px;
+      height: 50px;
+
+      &:hover {
+        color: white;
+      }
+    }
+
   }
 
 }

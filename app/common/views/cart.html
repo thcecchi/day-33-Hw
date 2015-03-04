@@ -1,26 +1,20 @@
 <h2>You have {{cart.allCartProducts.length}} products in your cart!</h2>
-<h2>Total is {{cart.totalCart}}!</h2>
+<h2>Total is {{cart.price * cart.qty}}!</h2>
 <div class="cartContainer">
   <article class="productsCart" ng-repeat="productsCart in cart.allCartProducts">
     <img ng-src="{{productsCart.photo}}" alt="{{productsCart.name}}">
     <div class='info'>
       <h3>{{productsCart.name}}</h3>
-      <h3>Qty:</h3>
-      <select name="productQty" ng-model="productsCart.qty">
-        <option value="1">one</option>
-        <option value="2">two</option>
-        <option value="3">three</option>
-        <option value="4">four</option>
-        <option value="5">five</option>
-        <option value="6">six</option>
-        <option value="7">seven</option>
-        <option value="8">eight</option>
-        <option value="9">nine</option>
-        <option value="10">ten</option>
-      </select>
-      <input type="button" value="update qty">
       <h5>{{productsCart.price}}</h5>
-      <i ng-click="cart.removeCartProduct(productsCart)" class="fa fa-minus-square-o"></i>
+      <form id="updateProductForm" ng-submit="cart.updateCartProduct(productsCart, productsCart._id)">
+        <h3>Qty: {{productsCart.qty}}</h3>
+        <input type="text" ng-model="productsCart.qty" placeholder="{{productsCart.qty}}" ng-model-options="{ updateOn: 'blur' }">
+
+        <button class="newQtySubmit" type="submit">Update Quantity</button>
+      </form>
+      <h3>Total: {{productsCart.price * productsCart.qty | currency}}</h3>
+
+      <i ng-click="cart.removeCartProduct(productsCart._id)" class="fa fa-minus-square-o"></i>
     </div>
   </article>
 </div>
