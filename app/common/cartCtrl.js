@@ -7,9 +7,22 @@
     ProductCartService.getAllCart().success(function(data) {
       cart.allCartProducts = data;
       console.log(data)
-    })
 
-  cart.numTotal = parseInt(cart.price * cart.qty)
+        var totalArr = []
+        for (var i = 0; i < cart.allCartProducts.length; i++) {
+          var numPrice = cart.allCartProducts[i].price
+          var numQty = cart.allCartProducts[i].qty
+          var thisNum = numPrice * numQty
+          totalArr.push(thisNum)
+
+          var total = totalArr.reduce(function(a, b) {
+            return a + b;
+          });
+          cart.cartTotal = total
+        }
+
+      })
+
 
     cart.addCartProduct = function (product) {
       ProductCartService.addOneCart(product);

@@ -23,9 +23,9 @@
     <header>
       <h1>Product Site</h1>
       <ul>
-        <li><a href="#/">Home</a></li>
-        <li><a href="#/admin">Admin Login</a></li>
-        <li ng-controller="CartCtrl as cart" class="cartTotal"><a href="#/cart"><i class="fa fa-shopping-cart"><p>
+        <li id="home"><a id="homenav" href="#/">Home</a></li>
+        <li id="admin"><a id="adminnav" href="#/admin">Admin Login</a></li>
+        <li id="cart" ng-controller="CartCtrl as cart" class="cartTotal"><a id="cartnav" href="#/cart"><i class="fa fa-shopping-cart"><p>
           {{cart.allCartProducts.length}}
         </p></i></a></li>
 

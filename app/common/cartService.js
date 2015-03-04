@@ -2,17 +2,15 @@
   "use strict";
   angular.module('day33Hw')
   .factory('ProductCartService', function ($http, $rootScope, $log) {
-//     var productsCart = [
-//
-// ];
 
-var cartUrl = 'http://tiy-fee-rest.herokuapp.com/collections/tylerngfour'
+var cartUrl = 'http://tiy-fee-rest.herokuapp.com/collections/tylerngfive'
 
 var getCartProducts = function () {
   return $http.get(cartUrl);
 };
 
 var addCartProduct = function (product) {
+  delete product._id;
   $http.post(cartUrl, product);
   $rootScope.$broadcast('product: created')
   $log.info("product: created");

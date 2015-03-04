@@ -1,5 +1,5 @@
 <h2>You have {{cart.allCartProducts.length}} products in your cart!</h2>
-<h2>Total is {{cart.numTotal}}!</h2>
+<h2>Your total purchase is {{cart.cartTotal | currency}}!</h2>
 <div class="cartContainer">
   <article class="productsCart" ng-repeat="productsCart in cart.allCartProducts">
     <img ng-src="{{productsCart.photo}}" alt="{{productsCart.name}}">
