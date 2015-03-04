@@ -2,10 +2,14 @@
 <h2>Your total purchase is {{cart.cartTotal | currency}}!</h2>
 <div class="cartContainer">
   <article class="productsCart" ng-repeat="productsCart in cart.allCartProducts">
-    <img ng-src="{{productsCart.photo}}" alt="{{productsCart.name}}">
+    <!-- <img ng-src="{{productsCart.photo}}" alt="{{productsCart.name}}">
     <div class='info'>
       <h3>{{productsCart.name}}</h3>
-      <h5>{{productsCart.price}}</h5>
+      <h5>{{productsCart.price}}</h5> -->
+
+      <prod-directive name='{{productsCart.name}}' photo='{{productsCart.photo}}' price='{{productsCart.price}}'></prod-directive>
+
+
       <form id="updateProductForm" ng-submit="cart.updateCartProduct(productsCart, productsCart._id)">
         <h3>Qty: {{productsCart.qty}}</h3>
         <input type="text" ng-model="productsCart.qty" placeholder="{{productsCart.qty}}" ng-model-options="{ updateOn: 'blur' }">
