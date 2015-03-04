@@ -9,6 +9,8 @@
       console.log(data)
     })
 
+  cart.numTotal = parseInt(cart.price * cart.qty)
+
     cart.addCartProduct = function (product) {
       ProductCartService.addOneCart(product);
     };
@@ -20,9 +22,11 @@
     cart.updateCartProduct = function (product, id) {
       ProductCartService.updateOneCart(product, id);
     }
-    // 
+    //
     // cart.totalCart = function () {
-    //   ProductCartService.totalAllCart();
+    // //   ProductCartService.totalAllCart();
+    // mainCtrl = functio
+    //
     // }
 
   });

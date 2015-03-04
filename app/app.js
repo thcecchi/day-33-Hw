@@ -26,12 +26,14 @@
         });
     });
 
-    app.run(function () {});
+    // .constant('_', _); //infusing underscore library
+
+    app.run(function ( ) {});
 
     app.controller('AppController', function ($scope) {
 
     });
 
 }(angular.module("day33Hw", [
-    'ngRoute',
+    'ngRoute'
 ])));

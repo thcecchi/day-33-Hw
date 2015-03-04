@@ -91,6 +91,18 @@ ng-view {
   h5 {
     display: inline-block;
   }
+
+  .newQtySubmit {
+    background: blanchedalmond;
+    border: 2px solid #ef4f59;
+    display: block;
+    width: 20%;
+    color: black;
+    padding: 0;
+    margin: 0 0 2% 0;
+    border-radius: 10px;
+    height: 30px;
+  }
 }
 
 #addProduct {
@@ -138,6 +150,14 @@ ng-view {
   //   display: none;
   // }
 
+}
+
+.indivComment {
+  background: blanchedalmond;
+  padding: 2%;
+  border-radius: 10px;
+  width: 50%;
+  margin-left: 20%;
 }
 
 #addComment {
