@@ -4,10 +4,13 @@
   .controller("DetailCtrl", function (DetailService, $scope, $location, $routeParams) {
     var detail = this;
 
-    // main.allProducts = ProductService.getAllProducts();
     DetailService.getAllComments().success(function(data) {
       detail.allComments = data;
-      console.log(data)
+      // console.log(data)
+
+      // if (data.hasOwnProperty(name)) {
+        // detail.allComments = data;
+      // }
     })
 
     // DetailService.getOneComment($routeParams.commentId).then(function(response) {
@@ -16,19 +19,18 @@
     // });
     /////////////
 
-    detail.addComment = function (newcomment) {
+    detail.addComment = function (newcomment, prodName) {
+      newcomment.name = prodName
+      console.log(newcomment)
       DetailService.addOneComment(newcomment);
-      // $scope.newcomment = {};
     }
 
     detail.updateComment = function (comment, id) {
       DetailService.updateOneComment(comment, id);
-      // $scope.newcomment = {};
     }
 
     detail.removeComment = function (id) {
       DetailService.removeOneComment(id);
-      // $scope.newcomment = {};
     }
 
     detail.notFound = "We're sorry, but the page you requested is not found."

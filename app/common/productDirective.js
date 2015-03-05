@@ -11,7 +11,8 @@
           name: '@', // @ = data can come in, = means that data is 2-way, & = express or function
           photo: '@',
           price: '@',
-          qty: '@'
+          qty: '@',
+          // _.id: '@'
         }
         // link: function (scope, element, attributes) {
         //   console.log(scope)

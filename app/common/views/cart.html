@@ -6,9 +6,9 @@
     <div class='info'>
       <h3>{{productsCart.name}}</h3>
       <h5>{{productsCart.price}}</h5> -->
-
+      <a class="indivLink" href="#/detail/{{productsCart._id}}">
       <prod-directive name='{{productsCart.name}}' photo='{{productsCart.photo}}' price='{{productsCart.price}}'></prod-directive>
-
+      </a>
 
       <form id="updateProductForm" ng-submit="cart.updateCartProduct(productsCart, productsCart._id)">
         <h3>Qty: {{productsCart.qty}}</h3>

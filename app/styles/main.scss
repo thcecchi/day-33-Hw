@@ -62,7 +62,15 @@ section {
   margin-right: auto;
   display: flex;
   justify-content: space-around;
+}
 
+.indivLink {
+  text-decoration: none;
+  color: black;
+
+  &:visited {
+    color: black;
+  }
 }
 
 ng-view {
