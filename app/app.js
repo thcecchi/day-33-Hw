@@ -35,5 +35,6 @@
     });
 
 }(angular.module("day33Hw", [
-    'ngRoute'
+    'ngRoute',
+    'ui.bootstrap'
 ])));

@@ -21,6 +21,10 @@
           cart.cartTotal = total
         }
 
+        if(cart.allCartProducts.length == 0) {
+          $('.cartContainer').append(document.createTextNode('You Have nothing In Your Cart'))
+        }
+
       })
 
 

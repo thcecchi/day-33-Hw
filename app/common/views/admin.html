@@ -1,45 +1,60 @@
-<!-- add product -->
-<div id="addProduct">
-  <i name="addProduct" ng-click="clicked = !clicked" class="fa fa-plus-square-o"></i>
-  <form id="addProductForm" ng-show="clicked" ng-submit="main.addProduct(newproduct)">
-    <input type="text" ng-model="newproduct.name" placeholder="add name">
-    <input type="text" ng-model="newproduct.photo" placeholder="add photo">
-    <input type="text" ng-model="newproduct.price" placeholder="add price">
-    <input type="text" ng-model="newproduct.qty" placeholder="add qty" id="productQty">
+<div class="containter-fluid">
 
+<div class="row">
+  <button type="button" class="navbar-toggle col-md-12" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body">
+    <i name="addProduct" ng-click="clicked = !clicked" class="fa fa-plus-square-o"></i>
+  </button>
+</div>
 
-    <button class="newProductSubmit" type="submit"><i class="fa fa-check-square-o"></i></button>
-  </form>
+<div class="row">
+
+  <div id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
+    <form id="addProductForm" ng-show="clicked" ng-submit="main.addProduct(newproduct)">
+      <h1 class="col-md-12">Add Product</h1>
+      <input type="text" ng-model="newproduct.name" placeholder="add name">
+      <input type="text" ng-model="newproduct.photo" placeholder="add photo">
+      <input type="text" ng-model="newproduct.price" placeholder="add price">
+      <input type="text" ng-model="newproduct.qty" placeholder="add qty" id="productQty">
+
+      <button class="newProductSubmit col-md-10" type="submit"><i class="fa fa-check-square-o"></i></button>
+    </form>
+  </div>
+</div>
+
 </div>
 <!-- END add product -->
-<article class="products" ng-repeat="products in main.allProducts">
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+<div class="row">
+
+<article class="products col-md-6 col-sm-12" ng-repeat="products in main.allProducts">
+<div class="flip-container col-md-12 col-sm-12" ontouchstart="this.classList.toggle('hover');">
   <div class="flipper" ng-class="{doflip: flip}">
     <div class="front">
       <!-- <img ng-src="{{products.photo}}" alt="{{products.name}}">
       <div class='info'>
         <h3>{{products.name}}</h3>
         <h5>{{products.price}}</h5> -->
-        <a class="indivLink" href="#/detail/{{products._id}}">
-        <prod-directive name='{{products.name}}' photo='{{products.photo}}' price='{{products.price}}'></prod-directive>
+        <a class="indivLink info col-md-12" href="#/detail/{{products._id}}">
+        <prod-directive class="info col-md-12" name='{{products.name}}' photo='{{products.photo}}' price='{{products.price}}'></prod-directive>
         </a>
 
       <!-- </div> -->
     </div>
     <div class="back">
-      <h3>Edit {{products.name}}</h3>
-      <input type="text" ng-model="products.name"/>  <input type="text" ng-model="products.photo"/>  <input type="text" ng-model="products.price"/> <input type="text" ng-model="products.qty"/>
+      <h3 class="col-md-12">Edit {{products.name}}</h3>
+      <input class="edits col-md-12" type="text" ng-model="products.name"/>  <input class="edits col-md-12" type="text" ng-model="products.photo"/>  <input class="edits col-md-12" type="text" ng-model="products.price"/> <input class="edits col-md-12" type="text" ng-model="products.qty"/>
     </div>
   </div>
 </div>
   <!-- start isEdited -->
-  <div ng-show="products.isEdited">
+  <div class="editIcons col-md-12" ng-show="products.isEdited">
     <i ng-click="products.isEdited = false; main.unflipCard(); main.updateProduct(products, products._id)" class="fa fa-check"></i>
   </div>
-  <div ng-hide="products.isEdited">
+  <div class="editIcons col-md-12" ng-hide="products.isEdited">
     <i ng-click="products.isEdited = true; main.flipCard()" class="fa fa-pencil edit"></i>
   <!-- end isEdited -->
   <!-- start remove -->
   <i ng-click="main.removeProduct(products._id)" class="fa fa-trash-o"></i>
   <!-- end remove -->
+</div>
 </article>
+</div>

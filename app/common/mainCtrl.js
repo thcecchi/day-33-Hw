@@ -1,5 +1,14 @@
 (function () {
   "use strict";
+
+  var container = document.querySelector('section');
+  var msnry = new Masonry( container, {
+    // options
+    columnWidth: 200,
+    itemSelector: '.item'
+  });
+
+
   angular.module("day33Hw")
     .controller("MainCtrl", function (ProductService, $scope, $location, $routeParams) {
       var main = this;
